@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<h1>Crear un nuevo Estudiante</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre"
+               placeholder="ingrese nuevo nombre" class="form-control"
+               value="{{ request.form.get('nombre', '') }}">
+               
+    </div>
+
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido"
+               placeholder="ingrese nuevo apellido" class="form-control"
+               value="{{ request.form.get('apellido', '') }}">
+               
+    </div>
+
+    <div class="form-group">
+        <label for="aprobado">Aprobado</label>
+        <input type="number" id="aprobado" name="aprobado"
+               placeholder="ingrese sí aprobó:Sí = 1, No = 0" class="form-control"
+               value="{{ request.form.get('aprobado', '') }}">
+               
+    </div>
+
+    <div class="form-group">
+        <label for="nota">nota</label>
+        <input type="number" id="nota" name="nota"
+               placeholder="ingrese la nota" class="form-control"
+               value="{{ request.form.get('nota', '') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">fecha</label>
+        <input type="date" id="fecha" name="fecha"
+               placeholder="ingrese la fecha" class="form-control"
+               value="{{ request.form.get('fecha', '') }}">
+    </div>       
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+<!--<script>
+    function validarFormulario() {
+        var titulo = document.getElementById("title").value.trim();
+        if (titulo === "") {
+            alert("Por favor, ingresa un título.");
+            return false;  // Evita el envío del formulario si el título está vacío.
+        }
+        return true;  // Permite el envío del formulario si el título no está vacío.
+
+</script>}-->
+{% endblock %}
