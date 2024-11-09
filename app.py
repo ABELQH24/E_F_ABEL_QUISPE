@@ -29,7 +29,7 @@ def get_one_estudiante(estudiante_id):
     conn = get_db_connection()
     estudiante = conn.execute('SELECT * FROM alumnos WHERE id = ?', (estudiante_id,)).fetchone()
     conn.close()
-    return render_template('estudiante/estudiantes.html', estudiante=estudiante)
+    return render_template('estudiante/estudiante.html', estudiante=estudiante)
 
 @app.route('/estudiante/create', methods=['GET','POST'])
 def create_one_estudiante():
